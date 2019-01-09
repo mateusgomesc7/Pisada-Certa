@@ -5,14 +5,10 @@ const dianteira2 = document.querySelector('#dianteira2')
 const centro2 = document.querySelector('#centro2')
 const traseira2 = document.querySelector('#traseira2')
 const estilo = document.querySelector('style')
+const relatorio = document.querySelector('#relatorio')
+
 
 function mudaCor() {
-    // let dianteira_1 = color(dianteira1.value)
-    // let dianteira_2 = color(dianteira2.value)
-    // let centro_1 = color(centro1.value)
-    // let centro_2 = color(centro2.value)
-    // let traseira_1 = color(traseira1.value)
-    // let traseira_2 = color(traseira2.value)
 
     let listaValores = `.st0{fill:rgb(${color(dianteira1.value)},0);}
 .st1{fill:rgb(${color(centro1.value)},0);}
@@ -31,15 +27,69 @@ function color(valor) {
         return cor
     }
     if (valor > 512) {
-        cor = '255,' + (512 - (valor*255/512)).toFixed(1).toString()
+        cor = '255,' + (512 - (valor * 255 / 512)).toFixed(1).toString()
         return cor
     }
 }
 
-// var slider = document.getElementById("myRange");
-// var output = document.getElementById("demo");
-// estilo.innerHTML = `.st1{fill:#${centro_1};}.st4{fill:#${centro2.value + 1010};}`;
 
-// centro2.oninput = function() {    
-// estilo.innerHTML = `.st1{fill:#${centro1.value + 1010};}.st4{fill:#${centro2.value + 1010};}`;
-// }
+function porcentagem(valor){
+    let porcent = valor*100/1024
+    return porcent.toFixed(2)
+}
+
+function gerar() {
+    let report = `<div class="card border-secondary mb-3 mt-3 p-2" id="relatorio">
+    <div class="card-header">
+        <h5 class="card-title">Relatório da corrida</h5>
+    </div>
+    <div class="card-body">
+        <table class="table table-striped table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">Intervalo (metros)</th>
+                    <th scope="col">Dianteira</th>
+                    <th scope="col">Centro</th>
+                    <th scope="col">Traseira</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">0 - 15</th>
+                    <td>${porcentagem(dianteira1.value)}%</td>
+                    <td>${porcentagem(centro1.value)}%</td>
+                    <td>${porcentagem(traseira1.value)}%</td>
+                </tr>
+                <tr>
+                    <th scope="row">15 - 80</th>
+                    <td>${porcentagem(dianteira2.value)}%</td>
+                    <td>${porcentagem(centro2.value)}%</td>
+                    <td>${porcentagem(traseira2.value)}%</td>
+                </tr>
+                <tr>
+                    <th scope="row">80 - 100</th>
+                    <td>${porcentagem((parseFloat(dianteira1.value) + parseFloat(dianteira2.value))/2)}%</td>
+                    <td>${porcentagem((parseFloat(centro1.value) + parseFloat(centro2.value))/2)}%</td>
+                    <td>${porcentagem((parseFloat(traseira1.value) + parseFloat(traseira2.value))/2)}%</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+    <div class="card-footer text-muted row">
+        <div class="col">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item"><a class="page-link" href="#">Dois pés</a></li>
+                    <li class="page-item"><a class="page-link" href="#">pé direito</a></li>
+                    <li class="page-item"><a class="page-link" href="#">pé esquerdo</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="col">
+            <a href="#" class="btn btn-primary">Salvar</a>
+        </div>
+    </div>
+</div>`
+    relatorio.innerHTML = report
+}

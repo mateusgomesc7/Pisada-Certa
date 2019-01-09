@@ -1,3 +1,11 @@
 .card{
     border: 3px solid rgba(0,0,0,.125);;
 }
+
+.botaoGerar{
+    margin-left: 20rem !important;
+}
+
+.table th, .table td{
+    padding: 0.2rem;
+}
