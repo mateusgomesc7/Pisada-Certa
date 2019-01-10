@@ -1,15 +1,13 @@
 function genPDF() {
 
     var doc = new jsPDF();
+    doc.setLanguage("pt-BR");
 
     var specialElementHandlers = {
         '.hidediv' : function(element,render) {return true;}
     };
 
-    doc.text(20,20,'Relatório da Corrida');
-
-    doc.fromHTML($('#relatorio').get(0), 20, 20, { 
-        'width': 100, 
+    doc.fromHTML($('#salvaRelatorio').get(0), 20, 20, { 
         'elementHandlers': specialElementHandlers
     });
 

@@ -48,7 +48,7 @@ function gerar() {
 
     trocaValor(true);
 
-    let report = `<div class="card border-secondary mb-3 mt-3 p-2" id="relatorio">
+    let report = `<div class="card border-secondary mb-3 mt-3 p-2">
     <div class="card-header">
         <h5 class="card-title hidediv">Relatório da corrida</h5>
     </div>
@@ -97,7 +97,32 @@ function gerar() {
             <a href="javascript:genPDF()" class="btn btn-primary hidediv">Salvar</a>
         </div>
     </div>
-</div>`
+</div>
+
+<div style="display:none" id="salvaRelatorio">
+<h1>Pisada Certa</h1>
+<h3>Relatório referente aos dados da Pisada Certa:</h3>
+<h2>10/11/2018</h2>
+</br>
+<h3>Média em relção aos dois pés:</h3>
+<p>Intervalo(minutos)</p>
+<p>Entre 0 - 15: dianteira-${porcentagem(dianteira_1)}% centro-${porcentagem(centro_1)}% traseira-${porcentagem(traseira_1)}%</p>
+<p>Entre 15 - 80: dianteira-${porcentagem(dianteira_2)}% centro-${porcentagem(centro_2)}% traseira-${porcentagem(traseira_2)}%</p>
+<p>Entre 80 - 100: dianteira-${porcentagem((parseFloat(dianteira_1) + parseFloat(dianteira_2)) / 2)}% centro-${porcentagem((parseFloat(centro_1) + parseFloat(centro_2)) / 2)}% traseira-${porcentagem((parseFloat(traseira_1) + parseFloat(traseira_2)) / 2)}%</p>
+<h3>Pé direito:</h3>
+<p>Intervalo(minutos)</p>
+<p>Entre 0 - 15: dianteira-${porcentagem(dianteira_1)}% centro-${porcentagem(centro_1)}% traseira-${porcentagem(traseira_1)}%</p>
+<p>Entre 15 - 80: dianteira-${porcentagem(dianteira_1)}% centro-${porcentagem(centro_1)}% traseira-${porcentagem(traseira_1)}%</p>
+<p>Entre 80 - 100: dianteira-${porcentagem(dianteira_1)}% centro-${porcentagem(centro_1)}% traseira-${porcentagem(traseira_1)}%</p>
+<h3>Pé esquerdo:</h3>
+<p>Intervalo(minutos)</p>
+<p>Entre 0 - 15: dianteira-${porcentagem(dianteira_2)}% centro-${porcentagem(centro_2)}% traseira-${porcentagem(traseira_2)}%</p>
+<p>Entre 15 - 80: dianteira-${porcentagem(dianteira_2)}% centro-${porcentagem(centro_2)}% traseira-${porcentagem(traseira_2)}%</p>
+<p>Entre 80 - 100: dianteira-${porcentagem(dianteira_2)}% centro-${porcentagem(centro_2)}% traseira-${porcentagem(traseira_2)}%</p>
+</div>
+
+`
+
     relatorio.innerHTML = report
 }
 
@@ -154,7 +179,31 @@ function doisPes() {
             <a href="javascript:genPDF()" class="btn btn-primary hidediv">Salvar</a>
         </div>
     </div>
-</div>`
+</div>
+
+<div style="display:none" id="salvaRelatorio">
+<h1>Pisada Certa</h1>
+<h3>Relatório referente aos dados da Pisada Certa:</h3>
+<h2>10/11/2018</h2>
+</br>
+<h3>Média em relção aos dois pés:</h3>
+<p>Intervalo(minutos)</p>
+<p>Entre 0 - 15: dianteira-${porcentagem(dianteira_1)}% centro-${porcentagem(centro_1)}% traseira-${porcentagem(traseira_1)}%</p>
+<p>Entre 15 - 80: dianteira-${porcentagem(dianteira_2)}% centro-${porcentagem(centro_2)}% traseira-${porcentagem(traseira_2)}%</p>
+<p>Entre 80 - 100: dianteira-${porcentagem((parseFloat(dianteira_1) + parseFloat(dianteira_2)) / 2)}% centro-${porcentagem((parseFloat(centro_1) + parseFloat(centro_2)) / 2)}% traseira-${porcentagem((parseFloat(traseira_1) + parseFloat(traseira_2)) / 2)}%</p>
+<h3>Pé direito:</h3>
+<p>Intervalo(minutos)</p>
+<p>Entre 0 - 15: dianteira-${porcentagem(dianteira_1)}% centro-${porcentagem(centro_1)}% traseira-${porcentagem(traseira_1)}%</p>
+<p>Entre 15 - 80: dianteira-${porcentagem(dianteira_1)}% centro-${porcentagem(centro_1)}% traseira-${porcentagem(traseira_1)}%</p>
+<p>Entre 80 - 100: dianteira-${porcentagem(dianteira_1)}% centro-${porcentagem(centro_1)}% traseira-${porcentagem(traseira_1)}%</p>
+<h3>Pé esquerdo:</h3>
+<p>Intervalo(minutos)</p>
+<p>Entre 0 - 15: dianteira-${porcentagem(dianteira_2)}% centro-${porcentagem(centro_2)}% traseira-${porcentagem(traseira_2)}%</p>
+<p>Entre 15 - 80: dianteira-${porcentagem(dianteira_2)}% centro-${porcentagem(centro_2)}% traseira-${porcentagem(traseira_2)}%</p>
+<p>Entre 80 - 100: dianteira-${porcentagem(dianteira_2)}% centro-${porcentagem(centro_2)}% traseira-${porcentagem(traseira_2)}%</p>
+</div>
+
+`
     relatorio.innerHTML = report
 }
 
@@ -211,7 +260,31 @@ function peDireito() {
             <a href="javascript:genPDF()" class="btn btn-primary hidediv">Salvar</a>
         </div>
     </div>
-</div>`
+</div>
+
+<div style="display:none" id="salvaRelatorio">
+<h1>Pisada Certa</h1>
+<h3>Relatório referente aos dados da Pisada Certa:</h3>
+<h2>10/11/2018</h2>
+</br>
+<h3>Média em relção aos dois pés:</h3>
+<p>Intervalo(minutos)</p>
+<p>Entre 0 - 15: dianteira-${porcentagem(dianteira_1)}% centro-${porcentagem(centro_1)}% traseira-${porcentagem(traseira_1)}%</p>
+<p>Entre 15 - 80: dianteira-${porcentagem(dianteira_2)}% centro-${porcentagem(centro_2)}% traseira-${porcentagem(traseira_2)}%</p>
+<p>Entre 80 - 100: dianteira-${porcentagem((parseFloat(dianteira_1) + parseFloat(dianteira_2)) / 2)}% centro-${porcentagem((parseFloat(centro_1) + parseFloat(centro_2)) / 2)}% traseira-${porcentagem((parseFloat(traseira_1) + parseFloat(traseira_2)) / 2)}%</p>
+<h3>Pé direito:</h3>
+<p>Intervalo(minutos)</p>
+<p>Entre 0 - 15: dianteira-${porcentagem(dianteira_1)}% centro-${porcentagem(centro_1)}% traseira-${porcentagem(traseira_1)}%</p>
+<p>Entre 15 - 80: dianteira-${porcentagem(dianteira_1)}% centro-${porcentagem(centro_1)}% traseira-${porcentagem(traseira_1)}%</p>
+<p>Entre 80 - 100: dianteira-${porcentagem(dianteira_1)}% centro-${porcentagem(centro_1)}% traseira-${porcentagem(traseira_1)}%</p>
+<h3>Pé esquerdo:</h3>
+<p>Intervalo(minutos)</p>
+<p>Entre 0 - 15: dianteira-${porcentagem(dianteira_2)}% centro-${porcentagem(centro_2)}% traseira-${porcentagem(traseira_2)}%</p>
+<p>Entre 15 - 80: dianteira-${porcentagem(dianteira_2)}% centro-${porcentagem(centro_2)}% traseira-${porcentagem(traseira_2)}%</p>
+<p>Entre 80 - 100: dianteira-${porcentagem(dianteira_2)}% centro-${porcentagem(centro_2)}% traseira-${porcentagem(traseira_2)}%</p>
+</div>
+
+`
     relatorio.innerHTML = report
 }
 
@@ -268,9 +341,35 @@ function peEsquerdo() {
             <a href="javascript:genPDF()" class="btn btn-primary hidediv">Salvar</a>
         </div>
     </div>
-</div>`
+</div>
+
+<div style="display:none" id="salvaRelatorio">
+<h1>Pisada Certa</h1>
+<h3>Relatório referente aos dados da Pisada Certa:</h3>
+<h2>10/11/2018</h2>
+</br>
+<h3>Média em relção aos dois pés:</h3>
+<p>Intervalo(minutos)</p>
+<p>Entre 0 - 15: dianteira-${porcentagem(dianteira_1)}% centro-${porcentagem(centro_1)}% traseira-${porcentagem(traseira_1)}%</p>
+<p>Entre 15 - 80: dianteira-${porcentagem(dianteira_2)}% centro-${porcentagem(centro_2)}% traseira-${porcentagem(traseira_2)}%</p>
+<p>Entre 80 - 100: dianteira-${porcentagem((parseFloat(dianteira_1) + parseFloat(dianteira_2)) / 2)}% centro-${porcentagem((parseFloat(centro_1) + parseFloat(centro_2)) / 2)}% traseira-${porcentagem((parseFloat(traseira_1) + parseFloat(traseira_2)) / 2)}%</p>
+<h3>Pé direito:</h3>
+<p>Intervalo(minutos)</p>
+<p>Entre 0 - 15: dianteira-${porcentagem(dianteira_1)}% centro-${porcentagem(centro_1)}% traseira-${porcentagem(traseira_1)}%</p>
+<p>Entre 15 - 80: dianteira-${porcentagem(dianteira_1)}% centro-${porcentagem(centro_1)}% traseira-${porcentagem(traseira_1)}%</p>
+<p>Entre 80 - 100: dianteira-${porcentagem(dianteira_1)}% centro-${porcentagem(centro_1)}% traseira-${porcentagem(traseira_1)}%</p>
+<h3>Pé esquerdo:</h3>
+<p>Intervalo(minutos)</p>
+<p>Entre 0 - 15: dianteira-${porcentagem(dianteira_2)}% centro-${porcentagem(centro_2)}% traseira-${porcentagem(traseira_2)}%</p>
+<p>Entre 15 - 80: dianteira-${porcentagem(dianteira_2)}% centro-${porcentagem(centro_2)}% traseira-${porcentagem(traseira_2)}%</p>
+<p>Entre 80 - 100: dianteira-${porcentagem(dianteira_2)}% centro-${porcentagem(centro_2)}% traseira-${porcentagem(traseira_2)}%</p>
+</div>
+
+`
     relatorio.innerHTML = report
 }
+
+
 
 // Para que a troca de janela entre os botões de dois pés, pé esquerdo e 
 // pé direito mantenham sempre os mesmos valores e 
