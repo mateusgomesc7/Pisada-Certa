@@ -7,6 +7,12 @@ const traseira2 = document.querySelector('#traseira2')
 const estilo = document.querySelector('style')
 const relatorio = document.querySelector('#relatorio')
 
+let dianteira_1 = document.querySelector('#dianteira1').value
+let centro_1 = document.querySelector('#centro1').value
+let traseira_1 = document.querySelector('#traseira1').value
+let dianteira_2 = document.querySelector('#dianteira2').value
+let centro_2 = document.querySelector('#centro2').value
+let traseira_2 = document.querySelector('#traseira2').value
 
 function mudaCor() {
 
@@ -32,16 +38,19 @@ function color(valor) {
     }
 }
 
-
-function porcentagem(valor){
-    let porcent = valor*100/1024
+function porcentagem(valor) {
+    let porcent = valor * 100 / 1024
     return porcent.toFixed(2)
 }
 
+
 function gerar() {
+
+    trocaValor(true);
+
     let report = `<div class="card border-secondary mb-3 mt-3 p-2" id="relatorio">
     <div class="card-header">
-        <h5 class="card-title">Relatório da corrida</h5>
+        <h5 class="card-title hidediv">Relatório da corrida</h5>
     </div>
     <div class="card-body">
         <table class="table table-striped table-dark">
@@ -56,21 +65,21 @@ function gerar() {
             <tbody>
                 <tr>
                     <th scope="row">0 - 15</th>
-                    <td>${porcentagem(dianteira1.value)}%</td>
-                    <td>${porcentagem(centro1.value)}%</td>
-                    <td>${porcentagem(traseira1.value)}%</td>
+                    <td>${porcentagem(dianteira_1)}%</td>
+                    <td>${porcentagem(centro_1)}%</td>
+                    <td>${porcentagem(traseira_1)}%</td>
                 </tr>
                 <tr>
                     <th scope="row">15 - 80</th>
-                    <td>${porcentagem(dianteira2.value)}%</td>
-                    <td>${porcentagem(centro2.value)}%</td>
-                    <td>${porcentagem(traseira2.value)}%</td>
+                    <td>${porcentagem(dianteira_2)}%</td>
+                    <td>${porcentagem(centro_2)}%</td>
+                    <td>${porcentagem(traseira_2)}%</td>
                 </tr>
                 <tr>
                     <th scope="row">80 - 100</th>
-                    <td>${porcentagem((parseFloat(dianteira1.value) + parseFloat(dianteira2.value))/2)}%</td>
-                    <td>${porcentagem((parseFloat(centro1.value) + parseFloat(centro2.value))/2)}%</td>
-                    <td>${porcentagem((parseFloat(traseira1.value) + parseFloat(traseira2.value))/2)}%</td>
+                    <td>${porcentagem((parseFloat(dianteira_1) + parseFloat(dianteira_2)) / 2)}%</td>
+                    <td>${porcentagem((parseFloat(centro_1) + parseFloat(centro_2)) / 2)}%</td>
+                    <td>${porcentagem((parseFloat(traseira_1) + parseFloat(traseira_2)) / 2)}%</td>
                 </tr>
             </tbody>
         </table>
@@ -78,18 +87,201 @@ function gerar() {
     </div>
     <div class="card-footer text-muted row">
         <div class="col">
-            <nav aria-label="Page navigation example">
-                <ul class="pagination">
-                    <li class="page-item"><a class="page-link" href="#">Dois pés</a></li>
-                    <li class="page-item"><a class="page-link" href="#">pé direito</a></li>
-                    <li class="page-item"><a class="page-link" href="#">pé esquerdo</a></li>
-                </ul>
-            </nav>
+        <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-secondary hidediv active" onclick="doisPes()">Dois pés</button>
+        <button type="button" class="btn btn-secondary hidediv" onclick="peDireito()">Pé direito</button>
+        <button type="button" class="btn btn-secondary hidediv" onclick="peEsquerdo()">Pé esquerdo</button>
+      </div>
         </div>
         <div class="col">
-            <a href="#" class="btn btn-primary">Salvar</a>
+            <a href="javascript:genPDF()" class="btn btn-primary hidediv">Salvar</a>
         </div>
     </div>
 </div>`
     relatorio.innerHTML = report
+}
+
+function doisPes() {
+
+    trocaValor(false);
+
+    let report = `<div class="card border-secondary mb-3 mt-3 p-2" id="relatorio">
+    <div class="card-header">
+        <h5 class="card-title hidediv">Relatório da corrida</h5>
+    </div>
+    <div class="card-body">
+        <table class="table table-striped table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">Intervalo (metros)</th>
+                    <th scope="col">Dianteira</th>
+                    <th scope="col">Centro</th>
+                    <th scope="col">Traseira</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">0 - 15</th>
+                    <td>${porcentagem(dianteira_1)}%</td>
+                    <td>${porcentagem(centro_1)}%</td>
+                    <td>${porcentagem(traseira_1)}%</td>
+                </tr>
+                <tr>
+                    <th scope="row">15 - 80</th>
+                    <td>${porcentagem(dianteira_2)}%</td>
+                    <td>${porcentagem(centro_2)}%</td>
+                    <td>${porcentagem(traseira_2)}%</td>
+                </tr>
+                <tr>
+                    <th scope="row">80 - 100</th>
+                    <td>${porcentagem((parseFloat(dianteira_1) + parseFloat(dianteira_2)) / 2)}%</td>
+                    <td>${porcentagem((parseFloat(centro_1) + parseFloat(centro_2)) / 2)}%</td>
+                    <td>${porcentagem((parseFloat(traseira_1) + parseFloat(traseira_2)) / 2)}%</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+    <div class="card-footer text-muted row">
+        <div class="col">
+        <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-secondary hidediv active" onclick="doisPes()">Dois pés</button>
+        <button type="button" class="btn btn-secondary hidediv" onclick="peDireito()">Pé direito</button>
+        <button type="button" class="btn btn-secondary hidediv" onclick="peEsquerdo()">Pé esquerdo</button>
+      </div>
+        </div>
+        <div class="col">
+            <a href="javascript:genPDF()" class="btn btn-primary hidediv">Salvar</a>
+        </div>
+    </div>
+</div>`
+    relatorio.innerHTML = report
+}
+
+function peDireito() {
+
+    trocaValor(false);
+
+    let report = `<div class="card border-secondary mb-3 mt-3 p-2" id="relatorio">
+    <div class="card-header">
+        <h5 class="card-title hidediv">Relatório da corrida</h5>
+    </div>
+    <div class="card-body">
+        <table class="table table-striped table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">Intervalo (metros)</th>
+                    <th scope="col">Dianteira</th>
+                    <th scope="col">Centro</th>
+                    <th scope="col">Traseira</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">0 - 15</th>
+                    <td>${porcentagem(dianteira_1)}%</td>
+                    <td>${porcentagem(centro_1)}%</td>
+                    <td>${porcentagem(traseira_1)}%</td>
+                </tr>
+                <tr>
+                    <th scope="row">15 - 80</th>
+                    <td>${porcentagem(dianteira_1)}%</td>
+                    <td>${porcentagem(centro_1)}%</td>
+                    <td>${porcentagem(traseira_1)}%</td>
+                </tr>
+                <tr>
+                    <th scope="row">80 - 100</th>
+                    <td>${porcentagem(dianteira_1)}%</td>
+                    <td>${porcentagem(centro_1)}%</td>
+                    <td>${porcentagem(traseira_1)}%</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+    <div class="card-footer text-muted row">
+        <div class="col">
+        <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-secondary hidediv" onclick="doisPes()">Dois pés</button>
+        <button type="button" class="btn btn-secondary hidediv active" onclick="peDireito()">Pé direito</button>
+        <button type="button" class="btn btn-secondary hidediv" onclick="peEsquerdo()">Pé esquerdo</button>
+      </div>
+        </div>
+        <div class="col">
+            <a href="javascript:genPDF()" class="btn btn-primary hidediv">Salvar</a>
+        </div>
+    </div>
+</div>`
+    relatorio.innerHTML = report
+}
+
+function peEsquerdo() {
+
+    trocaValor(false);
+
+    let report = `<div class="card border-secondary mb-3 mt-3 p-2" id="relatorio">
+    <div class="card-header">
+        <h5 class="card-title hidediv">Relatório da corrida</h5>
+    </div>
+    <div class="card-body">
+        <table class="table table-striped table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">Intervalo (metros)</th>
+                    <th scope="col">Dianteira</th>
+                    <th scope="col">Centro</th>
+                    <th scope="col">Traseira</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">0 - 15</th>
+                    <td>${porcentagem(dianteira_2)}%</td>
+                    <td>${porcentagem(centro_2)}%</td>
+                    <td>${porcentagem(traseira_2)}%</td>
+                </tr>
+                <tr>
+                    <th scope="row">15 - 80</th>
+                    <td>${porcentagem(dianteira_2)}%</td>
+                    <td>${porcentagem(centro_2)}%</td>
+                    <td>${porcentagem(traseira_2)}%</td>
+                </tr>
+                <tr>
+                    <th scope="row">80 - 100</th>
+                    <td>${porcentagem(dianteira_2)}%</td>
+                    <td>${porcentagem(centro_2)}%</td>
+                    <td>${porcentagem(traseira_2)}%</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+    <div class="card-footer text-muted row">
+        <div class="col">
+        <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-secondary hidediv" onclick="doisPes()">Dois pés</button>
+        <button type="button" class="btn btn-secondary hidediv" onclick="peDireito()">Pé direito</button>
+        <button type="button" class="btn btn-secondary hidediv active" onclick="peEsquerdo()">Pé esquerdo</button>
+      </div>
+        </div>
+        <div class="col">
+            <a href="javascript:genPDF()" class="btn btn-primary hidediv">Salvar</a>
+        </div>
+    </div>
+</div>`
+    relatorio.innerHTML = report
+}
+
+// Para que a troca de janela entre os botões de dois pés, pé esquerdo e 
+// pé direito mantenham sempre os mesmos valores e 
+// o botão gerar, troque se necessário 
+function trocaValor(trocar) {
+    if (trocar) {
+        dianteira_1 = dianteira1.value
+        centro_1 = centro1.value
+        traseira_1 = traseira1.value
+        dianteira_2 = dianteira2.value
+        centro_2 = centro2.value
+        traseira_2 = traseira2.value
+    }
 }
