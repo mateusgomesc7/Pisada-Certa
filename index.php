@@ -119,16 +119,19 @@
                         unset($_SESSION['msg']);
                     }
                 ?>
-
+                
+                <div class="card border-secondary mb-3 mt-3 p-2">
                 <form method="POST" action="processa.php" enctype="multipart/form-data">
                 <div class="custom-file">
-                            <h5>Em teste</h5>
+                            <h5>Em teste - Ler arquivo txt</h5>
                             <input type="file" class="form-control-file" id="exampleFormControlFile1" name="arquivo">
                             <div class="invalid-feedback">Example invalid custom file feedback</div>
                         
                             <input type="submit" value="Importar">
                     
                 </div>
+                </div>
+
                 </form>
                 <div id="relatorio">
                     <!-- <div class="card border-secondary mb-3 mt-3 p-2" id="relatorio">
