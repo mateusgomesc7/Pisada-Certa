@@ -1,3 +1,8 @@
+<?php
+    session_start();
+?>
+
+
 <!doctype html>
 <html lang="en">
 
@@ -94,6 +99,7 @@
                     </svg>
                 </div>
             </div>
+
             <div class="col text-center">
 
                 <label for="customRange2">Pisada Direita</label>
@@ -104,9 +110,26 @@
                 <input type="range" class="custom-range" min="0" max="1024" id="dianteira2" oninput="mudaCor()">
                 <input type="range" class="custom-range" min="0" max="1024" id="centro2" oninput="mudaCor()">
                 <input type="range" class="custom-range" min="0" max="1024" id="traseira2" oninput="mudaCor()">
-
+                
                 <button type="button" class="btn btn-primary botaoGerar" onclick="gerar()">Gerar</button>
 
+                <?php
+                    if(isset($_SESSION['msg'])){
+                        echo $_SESSION['msg'];
+                        unset($_SESSION['msg']);
+                    }
+                ?>
+
+                <form method="POST" action="processa.php" enctype="multipart/form-data">
+                <div class="custom-file">
+                            <h5>Em teste</h5>
+                            <input type="file" class="form-control-file" id="exampleFormControlFile1" name="arquivo">
+                            <div class="invalid-feedback">Example invalid custom file feedback</div>
+                        
+                            <input type="submit" value="Importar">
+                    
+                </div>
+                </form>
                 <div id="relatorio">
                     <!-- <div class="card border-secondary mb-3 mt-3 p-2" id="relatorio">
                         <div class="card-header">
