@@ -2,7 +2,6 @@
     session_start();
 ?>
 
-
 <!doctype html>
 <html lang="en">
 
@@ -124,10 +123,19 @@
                 <form method="POST" action="processa.php" enctype="multipart/form-data">
                 <div class="custom-file">
                             <h5>Em teste - Ler arquivo txt</h5>
-                            <input type="file" class="form-control-file" id="exampleFormControlFile1" name="arquivo">
-                            <div class="invalid-feedback">Example invalid custom file feedback</div>
-                        
-                            <input type="submit" value="Importar">
+                            <form class="form-inline">
+                                
+                                    <input type="file" class="form-control-file" id="exampleFormControlFile1" name="arquivo">
+                                    <div class="invalid-feedback">Example invalid custom file feedback</div>
+                                <div class="row">
+                                    <div class="col">
+                                        <input type="submit" value="Importar">
+                                    </div>    
+                                    <div class="col">
+                                        <button type="button" class="btn btn-primary botaoVisualizar" onclick="mostraLista()">Visualizar Dados</button>
+                                    </div>
+                                </div>
+                            </form>
                     
                 </div>
                 </div>
@@ -190,6 +198,14 @@
 
             </div>
         </div>
+        
+        <!-- Begin lista do banco de dados -->
+        <div class="lista" style="display:none;">
+			<h2>Lista dos Dados</h2>
+			<span id="conteudo"></span>
+		</div>
+        <!-- End lista do banco de dados -->
+
     </div>
 
     <!-- Begin of footer -->
@@ -223,6 +239,16 @@
     <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>﻿
     <script type="text/javascript" src="js/jspdf.min.js"></script>
     <script type="text/javascript" src="js/GeraPDF.js"></script>
+    <!-- Buscar os dados -->
+		<script>
+			$(document).ready(function () {
+				$.post('listar_usuario.php', function(retorna){
+					//Subtitui o valor no seletor id="conteudo"
+					$("#conteudo").html(retorna);
+				});
+			});
+		</script>
+		<!-- Fim do buscar os dados -->
 </body>
 
 </html>

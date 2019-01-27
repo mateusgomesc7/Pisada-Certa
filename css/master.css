@@ -9,3 +9,7 @@
 .table th, .table td{
     padding: 0.2rem;
 }
+
+.botaoVisualizar{
+    padding: 0.100rem !important;
+}

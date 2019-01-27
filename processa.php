@@ -17,14 +17,15 @@ $dado = file($arquivo_tmp);
 foreach($dado as $linha){
     $linha = trim($linha);
     $valor = explode(',',$linha);
-    var_dump($valor);
+    //var_dump($valor);
 
-    $nome = $valor[0];
-    $email = $valor[1];
-    $usuario = $valor[2];
-    $senha = $valor[3];
+    $dia = $valor[0];
+    $hora = $valor[1];
+    $valor1 = $valor[2];
+    $valor2 = $valor[3];
+    $valor3 = $valor[4];
 
-    $result_usuario = "INSERT INTO usuarios (nome, email, usuario, senha) VALUES('$nome', '$email', '$usuario', '$senha')";
+    $result_usuario = "INSERT INTO usuarios (dia, hora, valor1, valor2, valor3) VALUES('$dia', '$hora', '$valor1', '$valor2', '$valor3')";
 
     $resultado_usuario = mysqli_query($conn, $result_usuario);
 }

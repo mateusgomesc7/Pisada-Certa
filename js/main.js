@@ -6,6 +6,7 @@ const centro2 = document.querySelector('#centro2')
 const traseira2 = document.querySelector('#traseira2')
 const estilo = document.querySelector('style')
 const relatorio = document.querySelector('#relatorio')
+const lista = document.querySelector('.lista')
 
 let dianteira_1 = document.querySelector('#dianteira1').value
 let centro_1 = document.querySelector('#centro1').value
@@ -383,4 +384,8 @@ function trocaValor(trocar) {
         centro_2 = centro2.value
         traseira_2 = traseira2.value
     }
+}
+
+function mostraLista(){
+    lista.style.display="inline"
 }
