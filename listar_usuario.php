@@ -46,3 +46,11 @@ if(($resultado_usuario) AND ($resultado_usuario->num_rows != 0)){
 	echo "<div class='alert alert-danger' role='alert'>Nenhum usuário encontrado!</div>";
 }
 ?>
+
+<script>
+
+function mostraLista(){
+    lista.style.display="inline"
+}
+
+</script>

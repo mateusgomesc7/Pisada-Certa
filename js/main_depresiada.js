@@ -1,3 +1,13 @@
+
+
+// NÃO ESTÁ UTLIZANDO ESTE ARQUIVO
+
+// Este arquivo foi substituido por um MediaDeviceInfo.php, pois foi preciso 
+// dar mais um passo no projeto, colocar os dados através de um banco de 
+// dados.
+
+
+
 const dianteira1 = document.querySelector('#dianteira1')
 const centro1 = document.querySelector('#centro1')
 const traseira1 = document.querySelector('#traseira1')

@@ -1,5 +1,6 @@
 <?php
     session_start();
+    include_once "main.php";
 ?>
 
 <!doctype html>
@@ -39,14 +40,17 @@
     </nav>
     <!-- End of navbar -->
 
+    <!-- ************ INICIO CONTAINER ************-->
     <div class="container">
+
+        <!-- ************ INICIO PRIMEIRA LINHA DO SITE COM DUAS COLUNAS ************-->
         <div class="row">
             <div class="col">
                 <div class="card border-secondary mb-3 mt-3 p-2">
                     <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                         x="0px" y="0px" viewBox="0 0 105.1 105.1" style="enable-background:new 0 0 105.1 105.1;"
                         xml:space="preserve">
-                        <style type="text/css">
+                        <style id="estilo" type="text/css">
                             .st0 {
                                 fill: rgb(255, 255, 0);
                             }
@@ -99,6 +103,12 @@
                 </div>
             </div>
 
+
+
+
+
+
+            <!-- *******************  INICIO COLUNA DIREITA DO SITE ************** -->
             <div class="col text-center">
 
                 <label for="customRange2">Pisada Direita</label>
@@ -119,94 +129,76 @@
                     }
                 ?>
                 
+                <!-- ************ inicio card para LER ARQUIVO ************** -->
                 <div class="card border-secondary mb-3 mt-3 p-2">
-                <form method="POST" action="processa.php" enctype="multipart/form-data">
-                <div class="custom-file">
-                            <h5>Em teste - Ler arquivo txt</h5>
-                            <form class="form-inline">
-                                
-                                    <input type="file" class="form-control-file" id="exampleFormControlFile1" name="arquivo">
-                                    <div class="invalid-feedback">Example invalid custom file feedback</div>
-                                <div class="row">
-                                    <div class="col">
-                                        <input type="submit" value="Importar">
-                                    </div>    
-                                    <div class="col">
-                                        <button type="button" class="btn btn-primary botaoVisualizar" onclick="mostraLista()">Visualizar Dados</button>
-                                    </div>
-                                </div>
-                            </form>
                     
-                </div>
-                </div>
+                    <div class="card-header">
+                        <h5>Em teste - Ler arquivo txt</h5>
+                    </div>
+                    
+                    
+                    <form method="POST" action="processa.php" enctype="multipart/form-data">
+                        <div class="form-group">
 
-                </form>
+                            <input type="file" class="form-control-file" id="exampleFormControlFile1" name="arquivo">
+                            
+                            <div class="invalid-feedback">
+                                Example invalid   custom file feedback
+                            </div>
+                            
+                        </div>    
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <input type="submit" value="Importar">
+                                </div>    
+                                <div class="form-group col-md-6">
+                                    <button type="button" class="btn btn-primary botaoVisualizar" onclick="mostraLista()">
+                                            Visualizar Dados
+                                        </button>
+                                </div>
+                            </div>
+
+                    </form>
+                </div>
+                <!-- ************ fim card para LER ARQUIVO ************** -->
+
+
+
+                <!--*************** INICIO RELATÓRIO NO SITE  ***********************-->
                 <div id="relatorio">
-                    <!-- <div class="card border-secondary mb-3 mt-3 p-2" id="relatorio">
-                        <div class="card-header">
-                            <h5 class="card-title">Relatório da corrida</h5>
-                        </div>
-                        <div class="card-body">
-                            <table class="table table-striped table-dark">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Intervalo (metros)</th>
-                                        <th scope="col">Dianteira</th>
-                                        <th scope="col">Centro</th>
-                                        <th scope="col">Traseira</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">0 - 15</th>
-                                        <td>25%</td>
-                                        <td>15%</td>
-                                        <td>60%</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">15 - 80</th>
-                                        <td>75%</td>
-                                        <td>10%</td>
-                                        <td>15%</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">80 - 100</th>
-                                        <td>50%</td>
-                                        <td>10%</td>
-                                        <td>40%</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-
-                        </div>
-                        <div class="card-footer text-muted row">
-                            <div class="col">
-                                <nav aria-label="Page navigation example">
-                                    <ul class="pagination">
-                                        <li class="page-item"><a class="page-link" href="#">Dois pés</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">pé direito</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">pé esquerdo</a></li>
-                                    </ul>
-                                </nav>
-                            </div>
-                            <div class="col">
-                                <a href="#" class="btn btn-primary">Salvar</a>
-                            </div>
-                        </div>
-                    </div> -->
+                    <!-- O relatório será feito aqui, após aperar p botão Gerar.      -->
                 </div>
+                <!--****************** FIM RELATÓRIO NO SITE  ***********************-->
+
+
+
 
             </div>
+            <!-- *********************  FIM COLUNA DIREITA DO SITE ******************** -->
+
+
+
         </div>
-        
-        <!-- Begin lista do banco de dados -->
-        <div class="lista" style="display:none;">
-			<h2>Lista dos Dados</h2>
-			<span id="conteudo"></span>
-		</div>
-        <!-- End lista do banco de dados -->
+        <!-- ************ FIM PRIMEIRA LINHA DO SITE COM DUAS COLUNAS ************-->
+
+
+
+
+        <!-- ********* Begin lista do banco de dados ****************-->
+        <div class="lista" id="lista" style="display:none;">
+            <h2>Lista dos Dados</h2>
+            <span id="conteudo"></span>
+        </div>
+        <!-- ********* End lista do banco de dados ******************-->
+
+
+
 
     </div>
+    <!-- ************ FIM CONTAINER ************-->
+
+
+
 
     <!-- Begin of footer -->
     <footer>
@@ -235,20 +227,20 @@
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
-    <script src="js/main.js"></script>
+    <!-- <script src="js/main.js"></script> -->
     <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>﻿
     <script type="text/javascript" src="js/jspdf.min.js"></script>
     <script type="text/javascript" src="js/GeraPDF.js"></script>
     <!-- Buscar os dados -->
-		<script>
-			$(document).ready(function () {
-				$.post('listar_usuario.php', function(retorna){
-					//Subtitui o valor no seletor id="conteudo"
-					$("#conteudo").html(retorna);
-				});
-			});
-		</script>
-		<!-- Fim do buscar os dados -->
+        <script>
+            $(document).ready(function () {
+                $.post('listar_usuario.php', function(retorna){
+                    //Subtitui o valor no seletor id="conteudo"
+                    $("#conteudo").html(retorna);
+                });
+            });
+        </script>
+    <!-- Fim do buscar os dados -->
 </body>
 
 </html>
