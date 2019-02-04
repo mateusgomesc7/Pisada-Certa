@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include_once "main.php";
+    include_once "main-1.php";
 ?>
 
 <!doctype html>
