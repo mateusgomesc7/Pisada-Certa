@@ -15,8 +15,7 @@ if(($resultado_usuario) AND ($resultado_usuario->num_rows != 0)){
 		<thead>
     		<tr>
     	  		<th>ID</th>
-    	  		<th>Dia</th>
-    	  		<th>Hora</th>
+    	  		<th>Tempo</th>
                 <th>Valor 1</th>
                 <th>Valor 2</th>
                 <th>Valor 3</th>
@@ -30,8 +29,7 @@ if(($resultado_usuario) AND ($resultado_usuario->num_rows != 0)){
 
 	<tr>
       <th> <?php echo $row_usuario['id']; ?> </th>
-      <td> <?php echo $row_usuario['dia']; ?> </td>
-      <td> <?php echo $row_usuario['hora']; ?> </td>
+      <td> <?php echo $row_usuario['tempo']; ?> </td>
       <td> <?php echo $row_usuario['valor1']; ?> </td>
       <td> <?php echo $row_usuario['valor2']; ?> </td>
       <td> <?php echo $row_usuario['valor3']; ?> </td>

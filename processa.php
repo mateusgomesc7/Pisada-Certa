@@ -19,13 +19,12 @@ foreach($dado as $linha){
     $valor = explode(',',$linha);
     //var_dump($valor);
 
-    $dia = $valor[0];
-    $hora = $valor[1];
-    $valor1 = $valor[2];
-    $valor2 = $valor[3];
-    $valor3 = $valor[4];
+    $tempo = $valor[0];
+    $valor1 = $valor[1];
+    $valor2 = $valor[2];
+    $valor3 = $valor[3];
 
-    $result_usuario = "INSERT INTO usuarios (dia, hora, valor1, valor2, valor3) VALUES('$dia', '$hora', '$valor1', '$valor2', '$valor3')";
+    $result_usuario = "INSERT INTO usuarios ( tempo, valor1, valor2, valor3) VALUES('$tempo', '$valor1', '$valor2', '$valor3')";
 
     $resultado_usuario = mysqli_query($conn, $result_usuario);
 }

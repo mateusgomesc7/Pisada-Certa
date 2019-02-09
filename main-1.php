@@ -134,27 +134,27 @@ media_traseira = soma_traseira/i;
             <table class="table table-striped table-dark">
                 <thead>
                     <tr>
-                        <th scope="col">Intervalo (metros)</th>
+                        <th scope="col">Etapas</th>
                         <th scope="col">Dianteira</th>
                         <th scope="col">Centro</th>
-                        <th scope="col">Traseira</th>
+                        <th scope="col">Calcanhar</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <th scope="row">0 - 15</th>
+                        <th scope="row">Início</th>
                         <td>${porcentagem(media_dianteira)}%</td>
                         <td>${porcentagem(media_centro)}%</td>
                         <td>${porcentagem(media_traseira)}%</td>
                     </tr>
                     <tr>
-                        <th scope="row">15 - 80</th>
+                        <th scope="row">Meio</th>
                         <td>${porcentagem(dianteira_2)}%</td>
                         <td>${porcentagem(centro_2)}%</td>
                         <td>${porcentagem(traseira_2)}%</td>
                     </tr>
                     <tr>
-                        <th scope="row">80 - 100</th>
+                        <th scope="row">Fim</th>
                         <td>${porcentagem((parseFloat(media_dianteira) + parseFloat(dianteira_2)) / 2)}%</td>
                         <td>${porcentagem((parseFloat(media_centro) + parseFloat(centro_2)) / 2)}%</td>
                         <td>${porcentagem((parseFloat(media_traseira) + parseFloat(traseira_2)) / 2)}%</td>
@@ -180,23 +180,22 @@ media_traseira = soma_traseira/i;
     <div style="display:none" id="salvaRelatorio">
     <h1>Pisada Certa</h1>
     <h3>Relatório referente aos dados da Pisada Certa:</h3>
-    <h2>10/11/2018</h2>
     </br>
+    
     <h3>Média em relção aos dois pés:</h3>
-    <p>Intervalo(minutos)</p>
-    <p>Entre 0 - 15: dianteira-${porcentagem(media_dianteira)}% centro-${porcentagem(media_centro)}% traseira-${porcentagem(media_traseira)}%</p>
-    <p>Entre 15 - 80: dianteira-${porcentagem(dianteira_2)}% centro-${porcentagem(centro_2)}% traseira-${porcentagem(traseira_2)}%</p>
-    <p>Entre 80 - 100: dianteira-${porcentagem((parseFloat(media_dianteira) + parseFloat(dianteira_2)) / 2)}% centro-${porcentagem((parseFloat(media_centro) + parseFloat(centro_2)) / 2)}% traseira-${porcentagem((parseFloat(media_traseira) + parseFloat(traseira_2)) / 2)}%</p>
+    <p>Início: dianteira-${porcentagem(media_dianteira)}% centro-${porcentagem(media_centro)}% traseira-${porcentagem(media_traseira)}%</p>
+    <p>Meio: dianteira-${porcentagem(dianteira_2)}% centro-${porcentagem(centro_2)}% traseira-${porcentagem(traseira_2)}%</p>
+    <p>Fim: dianteira-${porcentagem((parseFloat(media_dianteira) + parseFloat(dianteira_2)) / 2)}% centro-${porcentagem((parseFloat(media_centro) + parseFloat(centro_2)) / 2)}% traseira-${porcentagem((parseFloat(media_traseira) + parseFloat(traseira_2)) / 2)}%</p>
+    
     <h3>Pé direito:</h3>
-    <p>Intervalo(minutos)</p>
-    <p>Entre 0 - 15: dianteira-${porcentagem(media_dianteira)}% centro-${porcentagem(media_centro)}% traseira-${porcentagem(media_traseira)}%</p>
-    <p>Entre 15 - 80: dianteira-${porcentagem(media_dianteira)}% centro-${porcentagem(media_centro)}% traseira-${porcentagem(media_traseira)}%</p>
-    <p>Entre 80 - 100: dianteira-${porcentagem(media_dianteira)}% centro-${porcentagem(media_centro)}% traseira-${porcentagem(media_traseira)}%</p>
+    <p>Início: dianteira-${porcentagem(media_dianteira)}% centro-${porcentagem(media_centro)}% traseira-${porcentagem(media_traseira)}%</p>
+    <p>Meio: dianteira-${porcentagem(media_dianteira)}% centro-${porcentagem(media_centro)}% traseira-${porcentagem(media_traseira)}%</p>
+    <p>Fim: dianteira-${porcentagem(media_dianteira)}% centro-${porcentagem(media_centro)}% traseira-${porcentagem(media_traseira)}%</p>
+    
     <h3>Pé esquerdo:</h3>
-    <p>Intervalo(minutos)</p>
-    <p>Entre 0 - 15: dianteira-${porcentagem(dianteira_2)}% centro-${porcentagem(centro_2)}% traseira-${porcentagem(traseira_2)}%</p>
-    <p>Entre 15 - 80: dianteira-${porcentagem(dianteira_2)}% centro-${porcentagem(centro_2)}% traseira-${porcentagem(traseira_2)}%</p>
-    <p>Entre 80 - 100: dianteira-${porcentagem(dianteira_2)}% centro-${porcentagem(centro_2)}% traseira-${porcentagem(traseira_2)}%</p>
+    <p>Início: dianteira-${porcentagem(dianteira_2)}% centro-${porcentagem(centro_2)}% traseira-${porcentagem(traseira_2)}%</p>
+    <p>Meio: dianteira-${porcentagem(dianteira_2)}% centro-${porcentagem(centro_2)}% traseira-${porcentagem(traseira_2)}%</p>
+    <p>Fim: dianteira-${porcentagem(dianteira_2)}% centro-${porcentagem(centro_2)}% traseira-${porcentagem(traseira_2)}%</p>
     </div>
 
     `
@@ -222,27 +221,27 @@ let report = `<div class="card border-secondary mb-3 mt-3 p-2" id="relatorio">
     <table class="table table-striped table-dark">
         <thead>
             <tr>
-                <th scope="col">Intervalo (metros)</th>
+                <th scope="col">Etapas</th>
                 <th scope="col">Dianteira</th>
                 <th scope="col">Centro</th>
-                <th scope="col">Traseira</th>
+                <th scope="col">Calcanhar</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <th scope="row">0 - 15</th>
+                <th scope="row">Início</th>
                 <td>${porcentagem(media_dianteira)}%</td>
                 <td>${porcentagem(media_centro)}%</td>
                 <td>${porcentagem(media_traseira)}%</td>
             </tr>
             <tr>
-                <th scope="row">15 - 80</th>
+                <th scope="row">Meio</th>
                 <td>${porcentagem(dianteira_2)}%</td>
                 <td>${porcentagem(centro_2)}%</td>
                 <td>${porcentagem(traseira_2)}%</td>
             </tr>
             <tr>
-                <th scope="row">80 - 100</th>
+                <th scope="row">Fim</th>
                 <td>${porcentagem((parseFloat(media_dianteira) + parseFloat(dianteira_2)) / 2)}%</td>
                 <td>${porcentagem((parseFloat(media_centro) + parseFloat(centro_2)) / 2)}%</td>
                 <td>${porcentagem((parseFloat(media_traseira) + parseFloat(traseira_2)) / 2)}%</td>
@@ -268,23 +267,22 @@ let report = `<div class="card border-secondary mb-3 mt-3 p-2" id="relatorio">
 <div style="display:none" id="salvaRelatorio">
 <h1>Pisada Certa</h1>
 <h3>Relatório referente aos dados da Pisada Certa:</h3>
-<h2>10/11/2018</h2>
 </br>
+
 <h3>Média em relção aos dois pés:</h3>
-<p>Intervalo(minutos)</p>
-<p>Entre 0 - 15: dianteira-${porcentagem(media_dianteira)}% centro-${porcentagem(media_centro)}% traseira-${porcentagem(media_traseira)}%</p>
-<p>Entre 15 - 80: dianteira-${porcentagem(dianteira_2)}% centro-${porcentagem(centro_2)}% traseira-${porcentagem(traseira_2)}%</p>
-<p>Entre 80 - 100: dianteira-${porcentagem((parseFloat(media_dianteira) + parseFloat(dianteira_2)) / 2)}% centro-${porcentagem((parseFloat(media_centro) + parseFloat(centro_2)) / 2)}% traseira-${porcentagem((parseFloat(media_traseira) + parseFloat(traseira_2)) / 2)}%</p>
+<p>Início: dianteira-${porcentagem(media_dianteira)}% centro-${porcentagem(media_centro)}% traseira-${porcentagem(media_traseira)}%</p>
+<p>Meio: dianteira-${porcentagem(dianteira_2)}% centro-${porcentagem(centro_2)}% traseira-${porcentagem(traseira_2)}%</p>
+<p>Fim: dianteira-${porcentagem((parseFloat(media_dianteira) + parseFloat(dianteira_2)) / 2)}% centro-${porcentagem((parseFloat(media_centro) + parseFloat(centro_2)) / 2)}% traseira-${porcentagem((parseFloat(media_traseira) + parseFloat(traseira_2)) / 2)}%</p>
+
 <h3>Pé direito:</h3>
-<p>Intervalo(minutos)</p>
-<p>Entre 0 - 15: dianteira-${porcentagem(media_dianteira)}% centro-${porcentagem(media_centro)}% traseira-${porcentagem(media_traseira)}%</p>
-<p>Entre 15 - 80: dianteira-${porcentagem(media_dianteira)}% centro-${porcentagem(media_centro)}% traseira-${porcentagem(media_traseira)}%</p>
-<p>Entre 80 - 100: dianteira-${porcentagem(media_dianteira)}% centro-${porcentagem(media_centro)}% traseira-${porcentagem(media_traseira)}%</p>
+<p>Início: dianteira-${porcentagem(media_dianteira)}% centro-${porcentagem(media_centro)}% traseira-${porcentagem(media_traseira)}%</p>
+<p>Meio: dianteira-${porcentagem(media_dianteira)}% centro-${porcentagem(media_centro)}% traseira-${porcentagem(media_traseira)}%</p>
+<p>Fim: dianteira-${porcentagem(media_dianteira)}% centro-${porcentagem(media_centro)}% traseira-${porcentagem(media_traseira)}%</p>
+
 <h3>Pé esquerdo:</h3>
-<p>Intervalo(minutos)</p>
-<p>Entre 0 - 15: dianteira-${porcentagem(dianteira_2)}% centro-${porcentagem(centro_2)}% traseira-${porcentagem(traseira_2)}%</p>
-<p>Entre 15 - 80: dianteira-${porcentagem(dianteira_2)}% centro-${porcentagem(centro_2)}% traseira-${porcentagem(traseira_2)}%</p>
-<p>Entre 80 - 100: dianteira-${porcentagem(dianteira_2)}% centro-${porcentagem(centro_2)}% traseira-${porcentagem(traseira_2)}%</p>
+<p>Início: dianteira-${porcentagem(dianteira_2)}% centro-${porcentagem(centro_2)}% traseira-${porcentagem(traseira_2)}%</p>
+<p>Meio: dianteira-${porcentagem(dianteira_2)}% centro-${porcentagem(centro_2)}% traseira-${porcentagem(traseira_2)}%</p>
+<p>Fim: dianteira-${porcentagem(dianteira_2)}% centro-${porcentagem(centro_2)}% traseira-${porcentagem(traseira_2)}%</p>
 </div>
 
 `
@@ -308,27 +306,27 @@ let report = `<div class="card border-secondary mb-3 mt-3 p-2" id="relatorio">
     <table class="table table-striped table-dark">
         <thead>
             <tr>
-                <th scope="col">Intervalo (metros)</th>
+                <th scope="col">Etapas</th>
                 <th scope="col">Dianteira</th>
                 <th scope="col">Centro</th>
-                <th scope="col">Traseira</th>
+                <th scope="col">Calcanhar</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <th scope="row">0 - 15</th>
+                <th scope="row">Início</th>
                 <td>${porcentagem(media_dianteira)}%</td>
                 <td>${porcentagem(media_centro)}%</td>
                 <td>${porcentagem(media_traseira)}%</td>
             </tr>
             <tr>
-                <th scope="row">15 - 80</th>
+                <th scope="row">Meio</th>
                 <td>${porcentagem(media_dianteira)}%</td>
                 <td>${porcentagem(media_centro)}%</td>
                 <td>${porcentagem(media_traseira)}%</td>
             </tr>
             <tr>
-                <th scope="row">80 - 100</th>
+                <th scope="row">Fim</th>
                 <td>${porcentagem(media_dianteira)}%</td>
                 <td>${porcentagem(media_centro)}%</td>
                 <td>${porcentagem(media_traseira)}%</td>
@@ -354,23 +352,22 @@ let report = `<div class="card border-secondary mb-3 mt-3 p-2" id="relatorio">
 <div style="display:none" id="salvaRelatorio">
 <h1>Pisada Certa</h1>
 <h3>Relatório referente aos dados da Pisada Certa:</h3>
-<h2>10/11/2018</h2>
 </br>
+
 <h3>Média em relção aos dois pés:</h3>
-<p>Intervalo(minutos)</p>
-<p>Entre 0 - 15: dianteira-${porcentagem(media_dianteira)}% centro-${porcentagem(media_centro)}% traseira-${porcentagem(media_traseira)}%</p>
-<p>Entre 15 - 80: dianteira-${porcentagem(dianteira_2)}% centro-${porcentagem(centro_2)}% traseira-${porcentagem(traseira_2)}%</p>
-<p>Entre 80 - 100: dianteira-${porcentagem((parseFloat(media_dianteira) + parseFloat(dianteira_2)) / 2)}% centro-${porcentagem((parseFloat(media_centro) + parseFloat(centro_2)) / 2)}% traseira-${porcentagem((parseFloat(media_traseira) + parseFloat(traseira_2)) / 2)}%</p>
+<p>Início: dianteira-${porcentagem(media_dianteira)}% centro-${porcentagem(media_centro)}% traseira-${porcentagem(media_traseira)}%</p>
+<p>Meio: dianteira-${porcentagem(dianteira_2)}% centro-${porcentagem(centro_2)}% traseira-${porcentagem(traseira_2)}%</p>
+<p>Fim: dianteira-${porcentagem((parseFloat(media_dianteira) + parseFloat(dianteira_2)) / 2)}% centro-${porcentagem((parseFloat(media_centro) + parseFloat(centro_2)) / 2)}% traseira-${porcentagem((parseFloat(media_traseira) + parseFloat(traseira_2)) / 2)}%</p>
+
 <h3>Pé direito:</h3>
-<p>Intervalo(minutos)</p>
-<p>Entre 0 - 15: dianteira-${porcentagem(media_dianteira)}% centro-${porcentagem(media_centro)}% traseira-${porcentagem(media_traseira)}%</p>
-<p>Entre 15 - 80: dianteira-${porcentagem(media_dianteira)}% centro-${porcentagem(media_centro)}% traseira-${porcentagem(media_traseira)}%</p>
-<p>Entre 80 - 100: dianteira-${porcentagem(media_dianteira)}% centro-${porcentagem(media_centro)}% traseira-${porcentagem(media_traseira)}%</p>
+<p>Início: dianteira-${porcentagem(media_dianteira)}% centro-${porcentagem(media_centro)}% traseira-${porcentagem(media_traseira)}%</p>
+<p>Meio: dianteira-${porcentagem(media_dianteira)}% centro-${porcentagem(media_centro)}% traseira-${porcentagem(media_traseira)}%</p>
+<p>Fim: dianteira-${porcentagem(media_dianteira)}% centro-${porcentagem(media_centro)}% traseira-${porcentagem(media_traseira)}%</p>
+
 <h3>Pé esquerdo:</h3>
-<p>Intervalo(minutos)</p>
-<p>Entre 0 - 15: dianteira-${porcentagem(dianteira_2)}% centro-${porcentagem(centro_2)}% traseira-${porcentagem(traseira_2)}%</p>
-<p>Entre 15 - 80: dianteira-${porcentagem(dianteira_2)}% centro-${porcentagem(centro_2)}% traseira-${porcentagem(traseira_2)}%</p>
-<p>Entre 80 - 100: dianteira-${porcentagem(dianteira_2)}% centro-${porcentagem(centro_2)}% traseira-${porcentagem(traseira_2)}%</p>
+<p>Início: dianteira-${porcentagem(dianteira_2)}% centro-${porcentagem(centro_2)}% traseira-${porcentagem(traseira_2)}%</p>
+<p>Meio: dianteira-${porcentagem(dianteira_2)}% centro-${porcentagem(centro_2)}% traseira-${porcentagem(traseira_2)}%</p>
+<p>Fim: dianteira-${porcentagem(dianteira_2)}% centro-${porcentagem(centro_2)}% traseira-${porcentagem(traseira_2)}%</p>
 </div>
 
 `
@@ -392,27 +389,27 @@ let report = `<div class="card border-secondary mb-3 mt-3 p-2" id="relatorio">
     <table class="table table-striped table-dark">
         <thead>
             <tr>
-                <th scope="col">Intervalo (metros)</th>
+                <th scope="col">Etapas</th>
                 <th scope="col">Dianteira</th>
                 <th scope="col">Centro</th>
-                <th scope="col">Traseira</th>
+                <th scope="col">Calcanhar</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <th scope="row">0 - 15</th>
+                <th scope="row">Início</th>
                 <td>${porcentagem(dianteira_2)}%</td>
                 <td>${porcentagem(centro_2)}%</td>
                 <td>${porcentagem(traseira_2)}%</td>
             </tr>
             <tr>
-                <th scope="row">15 - 80</th>
+                <th scope="row">Meio</th>
                 <td>${porcentagem(dianteira_2)}%</td>
                 <td>${porcentagem(centro_2)}%</td>
                 <td>${porcentagem(traseira_2)}%</td>
             </tr>
             <tr>
-                <th scope="row">80 - 100</th>
+                <th scope="row">Fim</th>
                 <td>${porcentagem(dianteira_2)}%</td>
                 <td>${porcentagem(centro_2)}%</td>
                 <td>${porcentagem(traseira_2)}%</td>
@@ -438,23 +435,22 @@ let report = `<div class="card border-secondary mb-3 mt-3 p-2" id="relatorio">
 <div style="display:none" id="salvaRelatorio">
 <h1>Pisada Certa</h1>
 <h3>Relatório referente aos dados da Pisada Certa:</h3>
-<h2>10/11/2018</h2>
 </br>
+
 <h3>Média em relção aos dois pés:</h3>
-<p>Intervalo(minutos)</p>
-<p>Entre 0 - 15: dianteira-${porcentagem(media_dianteira)}% centro-${porcentagem(media_centro)}% traseira-${porcentagem(media_traseira)}%</p>
-<p>Entre 15 - 80: dianteira-${porcentagem(dianteira_2)}% centro-${porcentagem(centro_2)}% traseira-${porcentagem(traseira_2)}%</p>
-<p>Entre 80 - 100: dianteira-${porcentagem((parseFloat(media_dianteira) + parseFloat(dianteira_2)) / 2)}% centro-${porcentagem((parseFloat(media_centro) + parseFloat(centro_2)) / 2)}% traseira-${porcentagem((parseFloat(media_traseira) + parseFloat(traseira_2)) / 2)}%</p>
+<p>Início: dianteira-${porcentagem(media_dianteira)}% centro-${porcentagem(media_centro)}% traseira-${porcentagem(media_traseira)}%</p>
+<p>Meio: dianteira-${porcentagem(dianteira_2)}% centro-${porcentagem(centro_2)}% traseira-${porcentagem(traseira_2)}%</p>
+<p>Fim: dianteira-${porcentagem((parseFloat(media_dianteira) + parseFloat(dianteira_2)) / 2)}% centro-${porcentagem((parseFloat(media_centro) + parseFloat(centro_2)) / 2)}% traseira-${porcentagem((parseFloat(media_traseira) + parseFloat(traseira_2)) / 2)}%</p>
+
 <h3>Pé direito:</h3>
-<p>Intervalo(minutos)</p>
-<p>Entre 0 - 15: dianteira-${porcentagem(media_dianteira)}% centro-${porcentagem(media_centro)}% traseira-${porcentagem(media_traseira)}%</p>
-<p>Entre 15 - 80: dianteira-${porcentagem(media_dianteira)}% centro-${porcentagem(media_centro)}% traseira-${porcentagem(media_traseira)}%</p>
-<p>Entre 80 - 100: dianteira-${porcentagem(media_dianteira)}% centro-${porcentagem(media_centro)}% traseira-${porcentagem(media_traseira)}%</p>
+<p>Início: dianteira-${porcentagem(media_dianteira)}% centro-${porcentagem(media_centro)}% traseira-${porcentagem(media_traseira)}%</p>
+<p>Meio: dianteira-${porcentagem(media_dianteira)}% centro-${porcentagem(media_centro)}% traseira-${porcentagem(media_traseira)}%</p>
+<p>Fim: dianteira-${porcentagem(media_dianteira)}% centro-${porcentagem(media_centro)}% traseira-${porcentagem(media_traseira)}%</p>
+
 <h3>Pé esquerdo:</h3>
-<p>Intervalo(minutos)</p>
-<p>Entre 0 - 15: dianteira-${porcentagem(dianteira_2)}% centro-${porcentagem(centro_2)}% traseira-${porcentagem(traseira_2)}%</p>
-<p>Entre 15 - 80: dianteira-${porcentagem(dianteira_2)}% centro-${porcentagem(centro_2)}% traseira-${porcentagem(traseira_2)}%</p>
-<p>Entre 80 - 100: dianteira-${porcentagem(dianteira_2)}% centro-${porcentagem(centro_2)}% traseira-${porcentagem(traseira_2)}%</p>
+<p>Início: dianteira-${porcentagem(dianteira_2)}% centro-${porcentagem(centro_2)}% traseira-${porcentagem(traseira_2)}%</p>
+<p>Meio: dianteira-${porcentagem(dianteira_2)}% centro-${porcentagem(centro_2)}% traseira-${porcentagem(traseira_2)}%</p>
+<p>Fim: dianteira-${porcentagem(dianteira_2)}% centro-${porcentagem(centro_2)}% traseira-${porcentagem(traseira_2)}%</p>
 </div>
 
 `
