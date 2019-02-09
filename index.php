@@ -111,10 +111,11 @@
             <!-- *******************  INICIO COLUNA DIREITA DO SITE ************** -->
             <div class="col text-center">
 
-                <label for="customRange2">Pisada Direita</label>
+                <!-- <label for="customRange2">Pisada Direita</label>
                 <input type="range" class="custom-range" min="0" max="1024" id="dianteira1" oninput="mudaCor()">
                 <input type="range" class="custom-range" min="0" max="1024" id="centro1" oninput="mudaCor()">
-                <input type="range" class="custom-range" min="0" max="1024" id="traseira1" oninput="mudaCor()">
+                <input type="range" class="custom-range" min="0" max="1024" id="traseira1" oninput="mudaCor()"> -->
+
                 <label for="customRange2">Pisada Esquerda</label>
                 <input type="range" class="custom-range" min="0" max="1024" id="dianteira2" oninput="mudaCor()">
                 <input type="range" class="custom-range" min="0" max="1024" id="centro2" oninput="mudaCor()">

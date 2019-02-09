@@ -125,6 +125,7 @@ media_traseira = soma_traseira/i;
         //alert(dianteira_1+centro_1+traseira_1);
         
         trocaValor(true);
+        mudaCor();
         
         let report = `<div class="card border-secondary mb-3 mt-3 p-2">
         <div class="card-header">
