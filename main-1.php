@@ -126,7 +126,7 @@ var media_meio_traseira = soma_traseira/(k-j);
 // Somas dos dados do fim
 soma_dianteira = 0; soma_centro = 0; soma_traseira = 0;
 var l;
-alert(k);
+//alert(k);
 for (l = k; l < i; l++)
 soma_dianteira += parseFloat(array_dianteira[l])
 
@@ -136,15 +136,15 @@ soma_centro += parseFloat(array_centro[l])
 for (l = k; l < i; l++)
 soma_traseira += parseFloat(array_traseira[l])
 
-alert(soma_dianteira);
+//alert(soma_dianteira);
 // FIM das somas dos dados do fim
 
 // Média dos dados do fim
-alert(l);
+//alert(l);
 var media_fim_dianteira = soma_dianteira/(l-k);
 var media_fim_centro = soma_centro/(l-k);
 var media_fim_traseira = soma_traseira/(l-k);
- alert(media_fim_dianteira);
+ //alert(media_fim_dianteira);
  //alert(media_fim_centro);
  //alert(media_fim_traseira);
 // FIM da Média dos dados do fim
