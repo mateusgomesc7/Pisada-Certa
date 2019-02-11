@@ -154,14 +154,14 @@ var media_fim_traseira = soma_traseira/(l-k);
 
 
 // *****************  INICIO ANIMACAO *********************
-var f = 0;
+var f = array_tempo.length - 1;
 
 function animacao(){
-    if(f < array_tempo.length){
-        setTimeout(animaCor, 100);
+    if(f > 0){
+        setTimeout(animaCor, 300);
     } else {
         alert(f);
-        f=0
+        f=array_tempo.length - 1 
     }
 }
 
@@ -176,7 +176,7 @@ function animaCor() {
 
         estilo.innerHTML = listaValores
 
-        f++
+        f--
         animacao();
     }
 
