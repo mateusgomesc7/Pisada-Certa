@@ -122,6 +122,7 @@
                 <input type="range" class="custom-range" min="0" max="1024" id="traseira2" oninput="mudaCor()">
                 
                 <button type="button" class="btn btn-primary botaoGerar" onclick="gerar()">Gerar</button>
+                <button type="button" class="btn btn-primary botaoGerar" onclick="animacao()">PLAY</button>
 
                 <?php
                     if(isset($_SESSION['msg'])){

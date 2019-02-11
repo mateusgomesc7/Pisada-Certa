@@ -149,8 +149,38 @@ var media_fim_traseira = soma_traseira/(l-k);
  //alert(media_fim_traseira);
 // FIM da Média dos dados do fim
 
-
 // *****************  FIM CALCULOS COM OS ARRAYS JS *********************
+
+
+
+// *****************  INICIO ANIMACAO *********************
+var f = 0;
+
+function animacao(){
+    if(f < array_tempo.length){
+        setTimeout(animaCor, 100);
+    } else {
+        alert(f);
+        f=0
+    }
+}
+
+function animaCor() {
+        
+        let listaValores = `.st0{fill:rgb(${color(array_dianteira[f])},0);}
+                            .st1{fill:rgb(${color(array_centro[f])},0);}
+                            .st2{fill:rgb(${color(array_traseira[f])},0);}
+                            .st3{fill:rgb(${color(dianteira2.value)},0);}
+                            .st4{fill:rgb(${color(centro2.value)},0);}
+                            .st5{fill:rgb(${color(traseira2.value)},0);}`
+
+        estilo.innerHTML = listaValores
+
+        f++
+        animacao();
+    }
+
+// *****************  INICIO ANIMACAO *********************
 
 
 
