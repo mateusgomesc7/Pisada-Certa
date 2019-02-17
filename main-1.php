@@ -154,14 +154,40 @@ var media_fim_traseira = soma_traseira/(l-k);
 
 
 // *****************  INICIO ANIMACAO *********************
-var f = array_tempo.length - 1;
+// var f = array_tempo.length - 1;
+
+// function animacao(){
+//     if(f > 0){
+//         setTimeout(animaCor, 50);
+//     } else {
+//         alert("Animação finalizada!");
+//         f=array_tempo.length - 1 
+//     }
+// }
+
+// function animaCor() {
+        
+//         let listaValores = `.st0{fill:rgb(${color(array_dianteira[f])},0);}
+//                             .st1{fill:rgb(${color(array_centro[f])},0);}
+//                             .st2{fill:rgb(${color(array_traseira[f])},0);}
+//                             .st3{fill:rgb(${color(dianteira2.value)},0);}
+//                             .st4{fill:rgb(${color(centro2.value)},0);}
+//                             .st5{fill:rgb(${color(traseira2.value)},0);}`
+
+//         estilo.innerHTML = listaValores
+
+//         f--
+//         animacao();
+//     }
+
+var f = 0;
 
 function animacao(){
-    if(f > 0){
-        setTimeout(animaCor, 300);
+    if(f < array_tempo.length){
+        setTimeout(animaCor, 50);
     } else {
-        alert(f);
-        f=array_tempo.length - 1 
+        alert("Animação finalizada!");
+        f=0;
     }
 }
 
@@ -176,9 +202,11 @@ function animaCor() {
 
         estilo.innerHTML = listaValores
 
-        f--
+        f++
         animacao();
     }
+
+
 
 // *****************  INICIO ANIMACAO *********************
 
@@ -207,6 +235,46 @@ function animaCor() {
             return cor
         }
     }
+
+    // function colorDianteira(valor) {
+    //     let cor
+    //     //Dentro do if nos temos a metade do valor
+    //     if (valor <= 561) {
+    //         // a variável valor é decrementado do menor vaor que a variável chega (um pouco menos, para caso der negativo, nao ter problema (10 a menos))
+    //         // multiplicado por 255, que o maior valor de cores
+    //         // e dividido pela metade de sua resolução
+    //         cor = ((valor-513) * 255 / 77).toFixed(1).toString() + ',255'
+    //         return cor
+    //     }
+    //     if (valor > 561) {
+    //         cor = '255,' + (77 - ((valor-513) * 255 / 77)).toFixed(1).toString()
+    //         return cor
+    //     }
+    // }
+
+    // function colorCentro(valor) {
+    //     let cor
+    //     if (valor <= 596) {
+    //         cor = ((valor-523) * 255 / 63).toFixed(1).toString() + ',255'
+    //         return cor
+    //     }
+    //     if (valor > 596) {
+    //         cor = '255,' + (63 - ((valor-523) * 255 / 63)).toFixed(1).toString()
+    //         return cor
+    //     }
+    // }
+
+    // function colorTraseira(valor) {
+    //     let cor
+    //     if (valor <= 565) {
+    //         cor = ((valor-511) * 255 / 44).toFixed(1).toString() + ',255'
+    //         return cor
+    //     }
+    //     if (valor > 565) {
+    //         cor = '255,' + (44 - ((valor-511) * 255 / 44)).toFixed(1).toString()
+    //         return cor
+    //     }
+    // }
 //***************** FIM DO MUDAR A COR DA PEGADA ************** 
 
 
