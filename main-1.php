@@ -3,14 +3,14 @@
 include_once "conexao.php";
 
 //consultar no banco de dados
-$result_usuario = "SELECT * FROM usuarios ORDER BY id ASC";
+$result_dado = "SELECT * FROM dados ORDER BY id ASC";
 //Executando a query
-$resultado_usuario = mysqli_query($conn, $result_usuario);
+$resultado_dado = mysqli_query($conn, $result_dado);
 
-//Verificar se encontrou resultado na tabela "usuarios"
-if(($resultado_usuario) AND ($resultado_usuario->num_rows != 0)){
+//Verificar se encontrou resultado na tabela "dados"
+if(($resultado_dado) AND ($resultado_dado->num_rows != 0)){
 
-	while($row_usuario = mysqli_fetch_assoc($resultado_usuario)){
+	while($row_usuario = mysqli_fetch_assoc($resultado_dado)){
         $tempo_1[] = $row_usuario['tempo'];
         $dianteira_1[] = $row_usuario['valor1'];
         $centro_1[] = $row_usuario['valor2'];
@@ -21,7 +21,7 @@ if(($resultado_usuario) AND ($resultado_usuario->num_rows != 0)){
     $centro_1 = implode('|', $centro_1);
     $traseira_1 = implode('|', $traseira_1);
 }else{
-	echo "<div class='alert alert-danger' role='alert'>Nenhum usuário encontrado!</div>";
+	echo "<div class='alert alert-danger' role='alert'>Nenhum dado encontrado!</div>";
 }
 ?>
 

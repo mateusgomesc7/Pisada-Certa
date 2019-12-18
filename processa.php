@@ -24,7 +24,7 @@ foreach($dado as $linha){
     $valor2 = $valor[2];
     $valor3 = $valor[3];
 
-    $result_usuario = "INSERT INTO usuarios ( tempo, valor1, valor2, valor3) VALUES('$tempo', '$valor1', '$valor2', '$valor3')";
+    $result_usuario = "INSERT INTO dados ( tempo, valor1, valor2, valor3) VALUES('$tempo', '$valor1', '$valor2', '$valor3')";
 
     $resultado_usuario = mysqli_query($conn, $result_usuario);
 }
