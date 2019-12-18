@@ -1,5 +1,5 @@
 # Pisada Certa
-Sistema Web o qual imprime de forma lúdica, os dados adquiridos por pisadas de uma pessoa, através de sensores de pressão, localizados em uma palmilha. Projeto criado na disciplina de Processamento Digital de Sinais no curso do Bacharelado em Engenharia Elétrica ofertado pelo IFPB Campus João Pessoa. 
+Sistema Web o qual imprime de forma lúdica, os dados adquiridos por pisadas de uma pessoa, através de sensores de pressão, localizados em uma palmilha. Projeto criado na disciplina de Sistemas Microcontrolados, no 5º Período do curso do Bacharelado em Engenharia Elétrica ofertado pelo IFPB Campus João Pessoa. 
 Este projeto inclue dos graduandos Mateus Gomes, Ruan Castro, Carlos Henrique e Álef Huan.
 
 ## Layout
